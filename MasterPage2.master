@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .a {
+            height:250px;
+        }
+        .auto-style1 {
+            width: 760px;
+        }
+        .auto-style2 {
+            width: 227px;
+            height: 72px;
+        }
+        a:active {
+            height:219px;
+            width:220px;
+        }
+        a:hober{
+            height:219px;
+            width:220px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    </div>
+        <table align="center" class="auto-style1">
+            <tr>
+                <td colspan="2">
+                    <img alt="" class="auto-style2" src="image/logo.png" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 40px; text-align: center;">&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="退出登录" />
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 220px; height: 350px;text-align: center; vertical-align: top;">
+                   <a>
+                       <div class="a">
+                    <asp:TreeView ID="TreeView1" runat="server" Font-Bold="True" Font-Size="XX-Large" Height="219px" ImageSet="BulletedList2" ShowExpandCollapse="False" Width="129px" NodeIndent="25" PopulateNodesFromClient="False" ExpandDepth="10">
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#5555DD" />
+                        <Nodes>
+                            <asp:TreeNode Text="新闻管理" Value="新闻管理">
+                                <asp:TreeNode NavigateUrl="~/addnews.aspx" Text="添加新闻" Value="添加新闻"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/mod4.aspx" Text="编辑新闻" Value="编辑新闻"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="用户管理" Value="用户管理">
+                                <asp:TreeNode Text="添加用户" Value="添加用户" NavigateUrl="~/Addadmin.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="修改密码" Value="修改密码" NavigateUrl="~/xg.aspx"></asp:TreeNode>
+                                <asp:TreeNode Text="删除用户" Value="删除用户" NavigateUrl="~/delete.aspx"></asp:TreeNode>
+                            </asp:TreeNode>
+                            <asp:TreeNode Text="普通用户" Value="普通用户">
+                                <asp:TreeNode NavigateUrl="~/yhxg.aspx" Text="修改密码" Value="修改密码"></asp:TreeNode>
+                                <asp:TreeNode NavigateUrl="~/yhdelete.aspx" Text="删除用户" Value="删除用户"></asp:TreeNode>
+                            </asp:TreeNode>
+                        </Nodes>
+                        <NodeStyle Font-Names="Tahoma" Font-Size="10pt" ForeColor="Black" HorizontalPadding="5px" NodeSpacing="0px" VerticalPadding="0px" ChildNodesPadding="1px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle Font-Underline="True" ForeColor="#5555DD" HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                           </div>
+                   </a>
+                </td>
+                <td style="width: 540px; height: 360px; vertical-align: top;">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center; height: 60px; font-size: 10px; font-family: 隶书;">河北北方学院<br />
+                    信息科学与工程学院<br />
+                    计算机科学与技术15组</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
